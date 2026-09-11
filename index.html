@@ -1,1 +1,444 @@
-<h1>My Website Works!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAE - Society of Mechanical &amp; Automotive Engineers</title>
+    <meta name="description" content="India's leading organization for vehicle prototyping, research, component design, training, and motorsports development.">
+    <link rel="icon" href="images/smae_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Home & News Page Specific Styles ── */
+        .hm-hero {
+            background: linear-gradient(135deg, rgba(10, 14, 23, 0.85) 0%, rgba(29, 53, 87, 0.75) 50%, rgba(230, 57, 70, 0.65) 100%),
+                        url("images/home_hero_bg.png") center/cover no-repeat;
+            padding: 160px 0 110px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
+        .hm-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .hm-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hm-hero-text h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #e63946;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(230,57,70,0.15);
+            padding: 6px 14px;
+            border-radius: 30px;
+            border: 1px solid rgba(230,57,70,0.3);
+        }
+        .hm-hero-text h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+        .hm-hero-text h1 span { color: #e63946; }
+        .hm-hero-text p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 580px;
+        }
+        .hm-hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn-hm-primary {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #e63946, #d62828);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 20px rgba(230,57,70,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-hm-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(230,57,70,0.5); }
+        .btn-hm-outline {
+            padding: 14px 28px;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-hm-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-2px); }
+
+        /* Quick Access Cards */
+        .hm-quick-section { padding: 60px 0; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .hm-quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .hm-quick-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: #222;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .hm-quick-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+        .hm-qc-icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #e63946, #d62828);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 14px rgba(230,57,70,0.3);
+        }
+        .hm-quick-card h4 { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; color: #111; }
+        .hm-quick-card p { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0 0 14px; flex-grow: 1; }
+        .hm-qc-link { font-size: 0.82rem; font-weight: 700; color: #e63946; display: flex; align-items: center; gap: 6px; }
+
+        /* News Section */
+        .hm-news-section { padding: 80px 0; background: #f8f9fa; }
+        .hm-news-header { text-align: center; margin-bottom: 40px; }
+        .hm-news-header h2 { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: #111; margin-bottom: 8px; }
+        .hm-news-header p { color: #777; font-size: 0.95rem; }
+
+        .hm-news-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            max-height: 540px;
+            overflow-y: auto;
+        }
+        .hm-news-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+        .hm-news-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            border-radius: 12px;
+            background: #fdfdfd;
+            border: 1px solid #f0f0f0;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .hm-news-item:hover { background: #fff5f5; border-color: rgba(230,57,70,0.3); }
+        .hm-news-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .tag-chapter { background: #e0f2fe; color: #0369a1; }
+        .tag-award { background: #fef3c7; color: #b45309; }
+        .tag-competition { background: #fee2e2; color: #b91c1c; }
+        .tag-training { background: #dcfce7; color: #15803d; }
+        
+        .hm-news-content { flex-grow: 1; font-size: 0.92rem; color: #333; line-height: 1.5; }
+        .hm-news-content a { color: #e63946; font-weight: 600; text-decoration: underline; }
+
+        /* Social Media */
+        .hm-social-section { padding: 80px 0; background: #fff; }
+        .hm-social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .hm-social-card {
+            background: #f8f9fa;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .hm-social-head {
+            padding: 16px 20px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .hm-social-head.fb { background: #1877f2; }
+        .hm-social-head.tw { background: #1da1f2; }
+        .hm-social-head.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .hm-social-body { padding: 16px; max-height: 340px; overflow-y: auto; }
+
+        @media(max-width:900px) {
+            .hm-hero-grid { grid-template-columns: 1fr; }
+            .hm-quick-grid { grid-template-columns: repeat(2, 1fr); }
+            .hm-social-grid { grid-template-columns: 1fr; }
+        }
+        @media(max-width:480px) {
+            .hm-quick-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/smae_logo.webp" alt="SMAE Logo" loading="lazy"><span> SMAE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="active">Home</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trainings.html">Trainings</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="pvnr.html">PVNR Award</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="student-corner.html">Student Corner</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hm-hero">
+        <div class="container">
+            <div class="hm-hero-grid">
+                <div class="hm-hero-text fade-in">
+                    <h5>Leading Automotive &amp; Mobility Body</h5>
+                    <h1>Society of Mechanical <span>&amp; Automotive Engineers</span></h1>
+                    <p>Empowering the next generation of engineers through hands-on vehicle prototyping, electric mobility training, research publications, and national motorsports challenges.</p>
+                    <div class="hm-hero-btns">
+                        <a href="trainings.html" class="btn-hm-primary"><i class="fas fa-graduation-cap"></i> Explore Trainings</a>
+                        <a href="membership.html" class="btn-hm-outline"><i class="fas fa-user-plus"></i> Become a Member</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Cards -->
+    <section class="hm-quick-section">
+        <div class="container">
+            <div class="hm-quick-grid fade-up">
+                
+                <a href="trainings.html" class="hm-quick-card">
+                    <div class="hm-qc-icon"><i class="fas fa-car-battery"></i></div>
+                    <h4>Trainings &amp; EV Tech</h4>
+                    <p>Hands-on fabrication for E-Bikes, Solar Cars, Formula EV, and Carbon Fiber components.</p>
+                    <span class="hm-qc-link">Explore Programs <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="events.html" class="hm-quick-card">
+                    <div class="hm-qc-icon"><i class="fas fa-trophy"></i></div>
+                    <h4>Motorsports Events</h4>
+                    <p>Participate in FFS India, FKDC, and SMAE BAJA national vehicle design challenges.</p>
+                    <span class="hm-qc-link">View Events <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="student-corner.html" class="hm-quick-card">
+                    <div class="hm-qc-icon"><i class="fas fa-laptop-file"></i></div>
+                    <h4>Student Corner</h4>
+                    <p>Register student chapters, apply for team sponsorships, and get project mentorship.</p>
+                    <span class="hm-qc-link">Apply Now <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="membership.html" class="hm-quick-card">
+                    <div class="hm-qc-icon"><i class="fas fa-id-card"></i></div>
+                    <h4>Membership</h4>
+                    <p>Join as a Student or Life Member to receive 50% waivers, certificates, and research access.</p>
+                    <span class="hm-qc-link">Join SMAE <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Activities Section -->
+    <section id="news" class="hm-news-section">
+        <div class="container">
+            <div class="hm-news-header fade-in">
+                <h2>Latest News &amp; Announcements</h2>
+                <div class="underline"></div>
+                <p>Stay updated with SMAE student chapter launches, awards, and event schedules</p>
+            </div>
+
+            <div class="hm-news-container fade-up">
+                <ul class="hm-news-list">
+                    
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-chapter">Student Chapter</span>
+                        <div class="hm-news-content">
+                            SMAE inaugurated a new <strong>Student Chapter</strong> at <strong>Seshadripuram Institute of Technology, Mysuru</strong> in October 2025.
+                        </div>
+                    </li>
+
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-chapter">Student Chapter</span>
+                        <div class="hm-news-content">
+                            SMAE launched a new <strong>Student Chapter</strong> at <strong>Sagar Institute of Research and Technology, Bhopal</strong> in January 2025.
+                        </div>
+                    </li>
+
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-award">Award</span>
+                        <div class="hm-news-content">
+                            SMAE presented the esteemed <strong>PVNR Young Leader Award - 2024</strong> to <strong>Monica Khatri Rana</strong> for outstanding engineering leadership.
+                        </div>
+                    </li>
+
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-competition">Competition</span>
+                        <div class="hm-news-content">
+                            SMAE organized <strong>Students Kart Design Challenge Season IV</strong> at Hasten Gokarting, Hyderabad.
+                        </div>
+                    </li>
+
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-training">Training</span>
+                        <div class="hm-news-content">
+                            Training Session on <strong>"Design and Fabrication of Go-Kart"</strong> organized at Mahaveer College of Engineering and Technology, Hyderabad.
+                        </div>
+                    </li>
+
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-training">Internship</span>
+                        <div class="hm-news-content">
+                            6-Day Summer Industrial Training &amp; Internship on Automobile conducted in association with <strong>CARJOZ</strong>.
+                        </div>
+                    </li>
+
+                    <li class="hm-news-item">
+                        <span class="hm-news-tag tag-chapter">Student Chapter</span>
+                        <div class="hm-news-content">
+                            SMAE opened Student Chapters at <strong>Dhanalakshmi Srinivasan College of Engineering, Coimbatore</strong>.
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social" class="hm-social-section">
+        <div class="container">
+            <div class="section-header text-center fade-in">
+                <h2 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:2rem;color:#111;">Connect On Social Media</h2>
+                <div class="underline"></div>
+                <p style="color:#777;font-size:0.95rem;margin-top:6px;">Follow SMAE for live updates, event highlights, and technical discussions</p>
+            </div>
+
+            <div class="hm-social-grid fade-up" style="margin-top:36px;">
+                
+                <div class="hm-social-card">
+                    <div class="hm-social-head fb">
+                        <i class="fab fa-facebook-f"></i> Facebook Page
+                    </div>
+                    <div class="hm-social-body">
+                        <div class="fb-page" data-href="https://www.facebook.com/smaesociety" data-tabs="timeline"
+                            data-width="" data-height="300" data-small-header="false" data-adapt-container-width="true"
+                            data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/smaesociety" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/smaesociety">Society of Mechanical and Automotive Engineers</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hm-social-card">
+                    <div class="hm-social-head tw">
+                        <i class="fab fa-twitter"></i> Twitter Feed
+                    </div>
+                    <div class="hm-social-body">
+                        <a class="twitter-timeline" href="https://twitter.com/SMAE46347992" data-chrome="nofooter" data-link-color="#e63946" data-height="300">Tweets by SMAE</a>
+                    </div>
+                </div>
+
+                <div class="hm-social-card">
+                    <div class="hm-social-head ig">
+                        <i class="fab fa-instagram"></i> Instagram Profile
+                    </div>
+                    <div class="hm-social-body" id="instagram-widget">
+                        <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank" style="display:flex;align-items:center;justify-content:center;height:240px;text-decoration:none;color:#e63946;font-weight:700;font-size:1rem;gap:10px;background:#fff;border-radius:12px;border:1.5px solid #f0f0f0;">
+                            <i class="fab fa-instagram" style="font-size:2rem;"></i> Follow @_s_m_a_e_ on Instagram
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><img src="images/smae_logo.png" alt="SMAE Logo" style="height:30px;margin-right:10px;vertical-align:middle;" loading="lazy">SMAE</h3>
+                <p>Equipping students with relevant skills &amp; practical exposure through internships, trainings, and competitions in the automotive domain.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/smaesociety" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SMAE46347992" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mechanical-and-automotive-engineers-86778a149/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Competitions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 71, Second Floor, 30th Cross, 11th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919560122939">+91-9560122939</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@smae.in">info@smae.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMAE - Society of Mechanical and Automotive Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="script.js?v=1.1" defer></script>
+</body>
+</html>

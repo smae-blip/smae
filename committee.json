@@ -1,0 +1,77 @@
+[
+    {
+        "category": "Technical Committee",
+        "members": [
+            {
+                "name": "Srijan Rao Polasani",
+                "role": "Design Engineer, Collins Aerospace",
+                "image": "images/committee/srijan.jpg",
+                "linkedin": "https://www.linkedin.com/in/srijan-rao-polasani-82194b104/"
+            },
+            {
+                "name": "Azeem Mohammed Abdul",
+                "role": "Co-Founder & Operations Manager, CarJoz.",
+                "image": "images/committee/azeem.jpg",
+                "linkedin": ""
+            },
+            {
+                "name": "Varanasi Venkata Bharadwaj",
+                "role": "Engineer-Chart Industries Inc",
+                "image": "images/committee/bharadwaj.jpg",
+                "linkedin": "https://www.linkedin.com/in/varanasi-bharadwaj-59558577"
+            },
+            {
+                "name": "Ajay Kumar D",
+                "role": "Senior Engineering Analyst, Oceaneering",
+                "image": "images/committee/ajay.jpg",
+                "linkedin": "https://www.linkedin.com/in/ajay-kumar-d-578230118"
+            }
+        ]
+    },
+    {
+        "category": "Advisory Council",
+        "members": [
+            {
+                "name": "Dr. B. Vijaya Kumar",
+                "role": "HoD M.E., at Guru Nanak Institute of Technology (GNIT)",
+                "image": "images/committee/dr_vijaya_kumar.jpg",
+                "linkedin": ""
+            },
+            {
+                "name": "Dr. Pal Pandian",
+                "role": "Associate Professor at Christ University Faculty of Engineering",
+                "image": "images/committee/dr_pal_pandian.jpg",
+                "linkedin": ""
+            },
+            {
+                "name": "Saurabh Agarwal",
+                "role": "M.Tech., from IIT Delhi, B.Tech., from IIT Kanpur Principal Consultant at Harcourt Butler Technical University",
+                "image": "images/committee/saurabh_agarwal.png",
+                "linkedin": ""
+            },
+            {
+                "name": "Kiran Krishnarao Desai",
+                "role": "Former Chief Engineer, Oil and Natural Gas Corporation Limited",
+                "image": "images/committee/kiran_desai.jpg",
+                "linkedin": ""
+            }
+        ]
+    },
+    {
+        "category": "Editorial Board",
+        "members": [
+            {
+                "name": "Dr. Dhanasekaran R",
+                "role": "Prof., at Guru Nanak Institute of Technology (GNIT)",
+                "image": "images/committee/dr_dhanasekaran.jpg",
+                "linkedin": ""
+            },
+            {
+                "name": "Dr. Konijeti Rama Krishna",
+                "role": "Prof., at K.L. University.",
+                "image": "images/committee/dr_konijeti.jpg",
+                "linkedin": ""
+            }
+        ]
+    }
+]

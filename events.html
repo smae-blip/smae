@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events &amp; Competitions - SMAE | Society of Mechanical &amp; Automotive Engineers</title>
+    <meta name="description" content="Explore national motorsports competitions, technical workshops, seminars, and internships organized by SMAE.">
+    <link rel="icon" href="images/smae_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Events Page Styles ── */
+        .ev-hero {
+            background: linear-gradient(135deg, #0a0e17 0%, #1d3557 60%, #e63946 100%);
+            padding: 120px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ev-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .ev-hero h1 { font-family:'Outfit',sans-serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:900; color:#fff; margin-bottom:14px; }
+        .ev-hero h1 span { color:#e63946; }
+        .ev-hero p { font-size:1.05rem; color:rgba(255,255,255,0.75); max-width:600px; margin:0 auto; line-height:1.7; }
+        .hero-breadcrumb { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:22px; font-size:0.85rem; color:rgba(255,255,255,0.5); }
+        .hero-breadcrumb a { color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s; }
+        .hero-breadcrumb a:hover { color:#e63946; }
+        .hero-breadcrumb i { font-size:0.7rem; }
+
+        /* Filter Pills */
+        .ev-filter-section { padding: 40px 0 20px; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .ev-filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+        .ev-filter-btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 1.5px solid #e1e1e1;
+            background: #f8f9fa;
+            color: #444;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .ev-filter-btn.active, .ev-filter-btn:hover {
+            background: #e63946;
+            color: #fff;
+            border-color: #e63946;
+            box-shadow: 0 4px 16px rgba(230,57,70,0.3);
+        }
+
+        /* Main Event Panels */
+        .ev-main { padding: 60px 0 80px; background: #f8f9fa; }
+        .ev-panel { display: none; }
+        .ev-panel.active { display: block; animation: fadeInUp 0.4s ease; }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+        .ev-card-main {
+            background: #fff;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .ev-card-main h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .ev-card-main h3 i {
+            color: #e63946;
+        }
+        .ev-card-main p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .ev-gallery-images {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .ev-img-box {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+        .ev-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .ev-img-box:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Competitions Showcase Cards */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .comp-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .comp-header {
+            background: linear-gradient(135deg, #1d3557, #0a0e17);
+            color: #fff;
+            padding: 24px;
+        }
+        .comp-header h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .comp-header span {
+            font-size: 0.8rem;
+            color: #e63946;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .comp-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .comp-body p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .comp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #e63946;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: background 0.2s, transform 0.2s;
+            align-self: flex-start;
+        }
+        .comp-link:hover {
+            background: #d62828;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width:900px) {
+            .ev-gallery-images { grid-template-columns: repeat(2, 1fr); }
+            .comp-grid { grid-template-columns: 1fr; }
+        }
+        @media(max-width:480px) {
+            .ev-gallery-images { grid-template-columns: 1fr 1fr; }
+            .ev-filter-pills { flex-direction: column; align-items: stretch; }
+            .ev-filter-btn { text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/smae_logo.webp" alt="SMAE Logo" loading="lazy"><span> SMAE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trainings.html">Trainings</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="pvnr.html">PVNR Award</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="student-corner.html">Student Corner</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="ev-hero">
+        <div class="container">
+            <h1>Events &amp; <span>Competitions</span></h1>
+            <p>National motorsports challenges, technical workshops, academic conferences, and field exposure programs for engineering students across India.</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Events</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Pills -->
+    <section class="ev-filter-section">
+        <div class="container">
+            <div class="ev-filter-pills">
+                <button class="ev-filter-btn active" data-epanel="all">All Events</button>
+                <button class="ev-filter-btn" data-epanel="workshops">Technical Workshops</button>
+                <button class="ev-filter-btn" data-epanel="conferences">Seminars &amp; Conferences</button>
+                <button class="ev-filter-btn" data-epanel="internships">Training &amp; Internships</button>
+                <button class="ev-filter-btn" data-epanel="awareness">Awareness Programs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Events Content -->
+    <section class="ev-main">
+        <div class="container">
+
+            <!-- ALL / COMPETITIONS SHOWCASE -->
+            <div id="panel-all" class="ev-panel active">
+                
+                <div class="ev-card-main fade-in">
+                    <h3><i class="fas fa-trophy"></i> National Motorsports Competitions</h3>
+                    <p>SMAE organizes premier national level vehicle design challenges where engineering teams showcase design, fabrication, safety, business plan, and dynamic racing skills.</p>
+                    
+                    <div class="comp-grid">
+                        <div class="comp-card">
+                            <div class="comp-header">
+                                <span>Season V</span>
+                                <h4>FFS India (Formula)</h4>
+                            </div>
+                            <div class="comp-body">
+                                <p>Formula student style EV and Combustion race vehicle design challenge tested at national tracks.</p>
+                                <a href="student-corner.html" class="comp-link">Register Team <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="comp-card">
+                            <div class="comp-header">
+                                <span>Season IV</span>
+                                <h4>FKDC (Go-Kart Challenge)</h4>
+                            </div>
+                            <div class="comp-body">
+                                <p>National level student kart design challenge hosted at Hasten Go-Karting Track, Hyderabad with 300+ participants.</p>
+                                <a href="student-corner.html" class="comp-link">Register Team <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="comp-card">
+                            <div class="comp-header">
+                                <span>National Series</span>
+                                <h4>SMAE BAJA Off-Road</h4>
+                            </div>
+                            <div class="comp-body">
+                                <p>Rugged off-road vehicle design and endurance test challenge for diploma and degree engineering students.</p>
+                                <a href="student-corner.html" class="comp-link">Register Team <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Technical Workshops Section inside All -->
+                <div class="ev-card-main fade-up">
+                    <h3><i class="fas fa-tools"></i> Recent Technical Workshops Highlights</h3>
+                    <p>SMAE organized "Design and Fabrication of a Go-Kart" workshop hosted by <strong>Sri Indu College of Engineering and Technology, Hyderabad</strong> with 150+ participants nationwide. Another 2-day workshop hosted by <strong>Guru Nanak Institute of Technology</strong> covered engine transmission, braking, steering, vehicle safety, FMEA, cost reports, and business plans.</p>
+                    
+                    <div class="ev-gallery-images">
+                        <div class="ev-img-box"><img src="images/img-new/1.jpg" alt="Workshop 1"></div>
+                        <div class="ev-img-box"><img src="images/img-new/5.jpg" alt="Workshop 2"></div>
+                        <div class="ev-img-box"><img src="images/img-new/3.jpg" alt="Workshop 3"></div>
+                        <div class="ev-img-box"><img src="images/img-new/4.jpg" alt="Workshop 4"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- WORKSHOPS PANEL -->
+            <div id="panel-workshops" class="ev-panel">
+                <div class="ev-card-main">
+                    <h3><i class="fas fa-screwdriver-wrench"></i> Technical Workshops</h3>
+                    <p>SMAE conducts intensive hands-on workshops covering CAD/CAM design, chassis analysis, brake geometry setup, and electric powertrain integration across colleges in India.</p>
+                    <p>Key highlights include 2-day workshops at Sri Indu College of Engineering and Guru Nanak Institute of Technology with 200+ participants undergoing training in steering systems, FMEA failure mode analysis, safety protocols, and cost reports.</p>
+                    
+                    <div class="ev-gallery-images">
+                        <div class="ev-img-box"><img src="images/img-new/1.jpg" alt="Workshop Photo 1"></div>
+                        <div class="ev-img-box"><img src="images/img-new/5.jpg" alt="Workshop Photo 2"></div>
+                        <div class="ev-img-box"><img src="images/img-new/3.jpg" alt="Workshop Photo 3"></div>
+                        <div class="ev-img-box"><img src="images/img-new/4.jpg" alt="Workshop Photo 4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONFERENCES PANEL -->
+            <div id="panel-conferences" class="ev-panel">
+                <div class="ev-card-main">
+                    <h3><i class="fas fa-graduation-cap"></i> Seminars &amp; Conferences</h3>
+                    <p>SMAE organizes national-level conferences to foster academic research, innovation, and career opportunities in Mechanical and Automobile Engineering.</p>
+                    <p>Delegates from top aerospace and automotive firms join our seminars to share key insights on EV battery safety, vehicle dynamics, and sustainable mobility.</p>
+                </div>
+            </div>
+
+            <!-- INTERNSHIPS PANEL -->
+            <div id="panel-internships" class="ev-panel">
+                <div class="ev-card-main">
+                    <h3><i class="fas fa-briefcase"></i> Training Sessions &amp; Internships</h3>
+                    <p>SMAE offers summer and winter industrial training programs in association with automotive partners such as CARJOZ, providing students with direct industry exposure.</p>
+                    <div class="ev-gallery-images">
+                        <div class="ev-img-box"><img src="images/img-new/6.JPG" alt="Training Session"></div>
+                        <div class="ev-img-box"><img src="images/img-new/7.JPG" alt="Internship Group"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AWARENESS PANEL -->
+            <div id="panel-awareness" class="ev-panel">
+                <div class="ev-card-main">
+                    <h3><i class="fas fa-lightbulb"></i> Awareness &amp; Up-Skill Programs</h3>
+                    <p>SMAE conducts community outreach, student chapter installations, and up-skill programs for young engineering minds, introducing them to future green mobility concepts.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><img src="images/smae_logo.png" alt="SMAE Logo" style="height:30px;margin-right:10px;vertical-align:middle;" loading="lazy">SMAE</h3>
+                <p>Equipping students with relevant skills &amp; practical exposure through internships, trainings, and competitions in the automotive domain.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/smaesociety" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SMAE46347992" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mechanical-and-automotive-engineers-86778a149/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Competitions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 71, Second Floor, 30th Cross, 11th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919560122939">+91-9560122939</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@smae.in">info@smae.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMAE - Society of Mechanical and Automotive Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.1" defer></script>
+    <script>
+        // Event filter pills toggle logic
+        document.querySelectorAll('.ev-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.ev-filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.ev-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                const target = btn.dataset.epanel;
+                const panel = document.getElementById('panel-' + target);
+                if (panel) panel.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

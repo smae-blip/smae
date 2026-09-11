@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery – SMAE | Society of Mechanical &amp; Automotive Engineers</title>
+    <meta name="description" content="Browse the SMAE photo gallery — Technical Workshops, Training &amp; Internships, SKDC Events and Awareness Programs.">
+    <link rel="icon" href="images/smae_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ═══════════════════════════════════════════════
+           GALLERY PAGE — all classes prefixed gal-
+        ═══════════════════════════════════════════════ */
+
+        /* ── Hero ── */
+        .gal-hero {
+            background: linear-gradient(135deg, #0a0e17 0%, #1d3557 60%, #e63946 100%);
+            padding: 120px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gal-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .gal-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .gal-hero h1 span { color: #e63946; }
+        .gal-hero p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .gal-hero-stats {
+            display: inline-flex;
+            gap: 0;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 22px 0;
+        }
+        .gal-hero-stat {
+            padding: 14px 24px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .gal-hero-stat:last-child { border-right: none; }
+        .gal-hero-stat strong {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #e63946;
+            line-height: 1;
+        }
+        .gal-hero-stat span {
+            display: block;
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 3px;
+        }
+        .hero-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.83rem;
+            color: rgba(255,255,255,0.45);
+        }
+        .hero-breadcrumb a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+        .hero-breadcrumb a:hover { color: #e63946; }
+        .hero-breadcrumb i { font-size: 0.65rem; }
+
+        /* ── Filter bar ── */
+        .gal-filter-bar {
+            background: #fff;
+            padding: 28px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .gal-filter-inner {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gal-filter-btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 2px solid #e8e8e8;
+            background: transparent;
+            color: #555;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .gal-filter-btn:hover {
+            border-color: #e63946;
+            color: #e63946;
+        }
+        .gal-filter-btn.active {
+            background: linear-gradient(135deg, #e63946, #d62828);
+            border-color: #e63946;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(230,57,70,0.3);
+        }
+
+        /* ── Main gallery area ── */
+        .gal-main {
+            padding: 60px 0 80px;
+            background: #f8f9fa;
+        }
+
+        /* ── Section heading ── */
+        .gal-section-header {
+            margin-bottom: 32px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .gal-section-icon {
+            width: 46px; height: 46px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #e63946, #d62828);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(230,57,70,0.28);
+        }
+        .gal-section-header-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #111;
+            margin: 0 0 3px;
+        }
+        .gal-section-header-text p {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0;
+        }
+        .gal-section-count {
+            margin-left: auto;
+            background: rgba(230,57,70,0.08);
+            color: #e63946;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(230,57,70,0.18);
+            flex-shrink: 0;
+        }
+
+        /* ── Category section block ── */
+        .gal-category-section {
+            margin-bottom: 60px;
+            transition: opacity 0.3s ease;
+        }
+        .gal-category-section.gal-hidden {
+            display: none;
+        }
+
+        /* ── Sub-section label ── */
+        .gal-sub-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 16px;
+            margin-top: 28px;
+        }
+        .gal-sub-label::before {
+            content: '';
+            width: 16px; height: 2px;
+            background: #e63946;
+            border-radius: 2px;
+        }
+
+        /* ── Photo grid ── */
+        .gal-grid {
+            columns: 4;
+            column-gap: 14px;
+        }
+        .gal-item {
+            break-inside: avoid;
+            margin-bottom: 14px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: #e0e0e0;
+            display: block;
+        }
+        .gal-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.35s ease;
+            border-radius: 12px;
+        }
+        .gal-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-end;
+            padding: 14px;
+        }
+        .gal-item:hover img { transform: scale(1.05); }
+        .gal-item:hover .gal-item-overlay { opacity: 1; }
+        .gal-item-zoom {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #e63946;
+            font-size: 1rem;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .gal-item:hover .gal-item-zoom {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .gal-item-cat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* ── Lightbox ── */
+        .gal-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .gal-lightbox.open { display: flex; }
+        .gal-lb-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gal-lb-img-wrap {
+            position: relative;
+            max-width: 100%;
+            max-height: calc(90vh - 60px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gal-lb-img-wrap img {
+            max-width: 90vw;
+            max-height: calc(90vh - 80px);
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            display: block;
+        }
+        .gal-lb-close {
+            position: fixed;
+            top: 20px; right: 24px;
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+            z-index: 1;
+        }
+        .gal-lb-close:hover { background: #e63946; border-color: #e63946; }
+        .gal-lb-prev,
+        .gal-lb-next {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px; height: 48px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+            z-index: 1;
+        }
+        .gal-lb-prev { left: 20px; }
+        .gal-lb-next { right: 20px; }
+        .gal-lb-prev:hover,
+        .gal-lb-next:hover { background: #e63946; border-color: #e63946; }
+        .gal-lb-counter {
+            margin-top: 14px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+        .gal-lb-caption {
+            margin-top: 6px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1100px) { .gal-grid { columns: 3; } }
+        @media (max-width: 750px)  { .gal-grid { columns: 2; } }
+        @media (max-width: 480px)  {
+            .gal-grid { columns: 2; column-gap: 8px; }
+            .gal-item { margin-bottom: 8px; }
+            .gal-hero-stats { flex-direction: column; }
+            .gal-hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .gal-hero-stat:last-child { border-bottom: none; }
+            .gal-lb-prev { left: 6px; }
+            .gal-lb-next { right: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ════ NAVIGATION ════ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/smae_logo.webp" alt="SMAE Logo" loading="lazy"><span> SMAE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trainings.html">Trainings</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="pvnr.html">PVNR Award</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="student-corner.html">Student Corner</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- ════ HERO ════ -->
+    <section class="gal-hero">
+        <div class="container">
+            <h1 class="fade-in">SMAE <span>Gallery</span></h1>
+            <p class="fade-in">Moments, Milestones &amp; Memories</p>
+            <div class="gal-hero-stats fade-in">
+                <div class="gal-hero-stat"><strong>141</strong><span>Photos</span></div>
+                <div class="gal-hero-stat"><strong>4</strong><span>Categories</span></div>
+                <div class="gal-hero-stat"><strong>58</strong><span>Workshop Shots</span></div>
+                <div class="gal-hero-stat"><strong>57</strong><span>SKDC Event</span></div>
+            </div>
+            <div class="hero-breadcrumb fade-in">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Gallery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════ FILTER BAR ════ -->
+    <div class="gal-filter-bar">
+        <div class="container">
+            <div class="gal-filter-inner">
+                <button class="gal-filter-btn active" data-filter="all">
+                    <i class="fas fa-border-all" style="margin-right:6px;"></i>All Photos
+                </button>
+                <button class="gal-filter-btn" data-filter="workshops">
+                    <i class="fas fa-tools" style="margin-right:6px;"></i>Technical Workshops
+                </button>
+                <button class="gal-filter-btn" data-filter="training">
+                    <i class="fas fa-graduation-cap" style="margin-right:6px;"></i>Training &amp; Internships
+                </button>
+                <button class="gal-filter-btn" data-filter="skdc">
+                    <i class="fas fa-flag-checkered" style="margin-right:6px;"></i>SKDC Events
+                </button>
+                <button class="gal-filter-btn" data-filter="awareness">
+                    <i class="fas fa-bullhorn" style="margin-right:6px;"></i>Awareness Programs
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ GALLERY MAIN ════ -->
+    <section class="gal-main">
+        <div class="container">
+
+            <!-- ── TECHNICAL WORKSHOPS ── -->
+            <div class="gal-category-section" data-category="workshops" id="cat-workshops">
+                <div class="gal-section-header">
+                    <div class="gal-section-icon"><i class="fas fa-tools"></i></div>
+                    <div class="gal-section-header-text">
+                        <h2>Technical Workshops</h2>
+                        <p>SKDC Season-I &amp; Season-II Official Workshops</p>
+                    </div>
+                    <span class="gal-section-count">58 Photos</span>
+                </div>
+
+                <div class="gal-sub-label">SKDC Season-I Official Workshop</div>
+                <div class="gal-grid" id="grid-skdc1">
+                    <!-- 32 images injected by JS -->
+                </div>
+
+                <div class="gal-sub-label">SKDC Season-II Official Workshop</div>
+                <div class="gal-grid" id="grid-skdc2">
+                    <!-- 26 images injected by JS -->
+                </div>
+            </div>
+
+            <!-- ── TRAINING & INTERNSHIPS ── -->
+            <div class="gal-category-section" data-category="training" id="cat-training">
+                <div class="gal-section-header">
+                    <div class="gal-section-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="gal-section-header-text">
+                        <h2>Training Sessions &amp; Internships</h2>
+                        <p>Summer Internship Programme</p>
+                    </div>
+                    <span class="gal-section-count">8 Photos</span>
+                </div>
+                <div class="gal-grid" id="grid-training">
+                    <!-- 8 images injected by JS -->
+                </div>
+            </div>
+
+            <!-- ── SKDC EVENT ── -->
+            <div class="gal-category-section" data-category="skdc" id="cat-skdc">
+                <div class="gal-section-header">
+                    <div class="gal-section-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <div class="gal-section-header-text">
+                        <h2>SKDC Events</h2>
+                        <p>Students Kart Design Challenge — Season 1 Event</p>
+                    </div>
+                    <span class="gal-section-count">57 Photos</span>
+                </div>
+                <div class="gal-grid" id="grid-skdc-event">
+                    <!-- 57 images injected by JS -->
+                </div>
+            </div>
+
+            <!-- ── AWARENESS PROGRAMS ── -->
+            <div class="gal-category-section" data-category="awareness" id="cat-awareness">
+                <div class="gal-section-header">
+                    <div class="gal-section-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="gal-section-header-text">
+                        <h2>Awareness Programs</h2>
+                        <p>7-Day Summer Upskill Program</p>
+                    </div>
+                    <span class="gal-section-count">18 Photos</span>
+                </div>
+                <div class="gal-grid" id="grid-awareness">
+                    <!-- 18 images injected by JS -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════ LIGHTBOX ════ -->
+    <div class="gal-lightbox" id="galLightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+        <button class="gal-lb-close" id="lbClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+        <button class="gal-lb-prev"  id="lbPrev"  aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
+        <button class="gal-lb-next"  id="lbNext"  aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>
+        <div class="gal-lb-inner">
+            <div class="gal-lb-img-wrap">
+                <img id="lbImg" src="" alt="SMAE Gallery Photo">
+            </div>
+            <div class="gal-lb-counter" id="lbCounter">1 / 141</div>
+            <div class="gal-lb-caption" id="lbCaption"></div>
+        </div>
+    </div>
+
+    <!-- ════ FOOTER ════ -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><img src="images/smae_logo.png" alt="SMAE Logo" style="height:30px;margin-right:10px;vertical-align:middle;" loading="lazy">SMAE</h3>
+                <p>Equipping students with relevant skills &amp; practical exposure through internships, trainings, and competitions in the automotive domain.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/smaesociety" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SMAE46347992" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mechanical-and-automotive-engineers-86778a149/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Competitions</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 71, Second Floor, 30th Cross, 11th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919560122939">+91-9560122939</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@smae.in">info@smae.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMAE - Society of Mechanical and Automotive Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.1" defer></script>
+    <script>
+    (function () {
+        'use strict';
+
+        /* ─────────────────────────────────────────────
+           IMAGE DATA — every photo, in display order
+        ───────────────────────────────────────────── */
+        var IMAGES = {
+            skdc1: (function () {
+                var a = [];
+                for (var i = 1; i <= 32; i++) {
+                    a.push({
+                        src: 'images/gallery/technical-workshops/skdc-season-1/skdc1-' + pad(i) + '.jpg',
+                        alt: 'SMAE SKDC Season-I Official Workshop — photo ' + i,
+                        cat: 'workshops',
+                        label: 'SKDC Season-I Official Workshop'
+                    });
+                }
+                return a;
+            }()),
+            skdc2: (function () {
+                var a = [];
+                for (var i = 1; i <= 26; i++) {
+                    a.push({
+                        src: 'images/gallery/technical-workshops/skdc-season-2/skdc2-' + pad(i) + '.jpg',
+                        alt: 'SMAE SKDC Season-II Official Workshop — photo ' + i,
+                        cat: 'workshops',
+                        label: 'SKDC Season-II Official Workshop'
+                    });
+                }
+                return a;
+            }()),
+            training: [
+                { src: 'images/gallery/training-internships/training-01.jpg', alt: 'SMAE Summer Internship — photo 1', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-02.jpg', alt: 'SMAE Summer Internship — photo 2', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-03.jpg', alt: 'SMAE Summer Internship — photo 3', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-04.jpg', alt: 'SMAE Summer Internship — photo 4', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-05.jpg', alt: 'SMAE Summer Internship — photo 5', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-06.jpg', alt: 'SMAE Summer Internship — photo 6', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-07.jpg', alt: 'SMAE Summer Internship — photo 7', cat: 'training', label: 'Summer Internship' },
+                { src: 'images/gallery/training-internships/training-avn.jpg', alt: 'SMAE Summer Internship — AVN photo', cat: 'training', label: 'Summer Internship' }
+            ],
+            skdcEvent: (function () {
+                var a = [];
+                for (var i = 1; i <= 57; i++) {
+                    a.push({
+                        src: 'images/gallery/skdc-event/skdc-event-' + pad(i) + '.jpg',
+                        alt: 'SMAE Students Kart Design Challenge Season 1 — photo ' + i,
+                        cat: 'skdc',
+                        label: 'SKDC Season-1 Event'
+                    });
+                }
+                return a;
+            }()),
+            awareness: (function () {
+                var a = [];
+                for (var i = 1; i <= 18; i++) {
+                    a.push({
+                        src: 'images/gallery/awareness-programs/awareness-' + pad(i) + '.jpg',
+                        alt: 'SMAE 7-Day Summer Upskill Program — photo ' + i,
+                        cat: 'awareness',
+                        label: '7-Day Summer Upskill Program'
+                    });
+                }
+                return a;
+            }())
+        };
+
+        // Flat array of all images in order, used by lightbox
+        var ALL_IMAGES = [].concat(IMAGES.skdc1, IMAGES.skdc2, IMAGES.training, IMAGES.skdcEvent, IMAGES.awareness);
+
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+        /* ─────────────────────────────────────────────
+           BUILD GRIDS
+        ───────────────────────────────────────────── */
+        function buildGrid(gridId, images) {
+            var grid = document.getElementById(gridId);
+            if (!grid) return;
+            var frag = document.createDocumentFragment();
+            images.forEach(function (img, idx) {
+                var globalIdx = ALL_IMAGES.indexOf(img);
+                var item = document.createElement('div');
+                item.className = 'gal-item';
+                item.setAttribute('data-index', globalIdx);
+                item.setAttribute('role', 'button');
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('aria-label', 'Open photo: ' + img.alt);
+
+                var image = document.createElement('img');
+                image.src       = img.src;
+                image.alt       = img.alt;
+                image.loading   = 'lazy';
+                image.decoding  = 'async';
+
+                var overlay = document.createElement('div');
+                overlay.className = 'gal-item-overlay';
+                var catLabel = document.createElement('span');
+                catLabel.className = 'gal-item-cat-label';
+                catLabel.textContent = img.label;
+                overlay.appendChild(catLabel);
+
+                var zoom = document.createElement('div');
+                zoom.className = 'gal-item-zoom';
+                zoom.innerHTML = '<i class="fas fa-expand-alt"></i>';
+
+                item.appendChild(image);
+                item.appendChild(overlay);
+                item.appendChild(zoom);
+                frag.appendChild(item);
+            });
+            grid.appendChild(frag);
+        }
+
+        buildGrid('grid-skdc1',      IMAGES.skdc1);
+        buildGrid('grid-skdc2',      IMAGES.skdc2);
+        buildGrid('grid-training',   IMAGES.training);
+        buildGrid('grid-skdc-event', IMAGES.skdcEvent);
+        buildGrid('grid-awareness',  IMAGES.awareness);
+
+        /* ─────────────────────────────────────────────
+           FILTER
+        ───────────────────────────────────────────── */
+        var filterBtns = document.querySelectorAll('.gal-filter-btn');
+        var catSections = document.querySelectorAll('.gal-category-section');
+
+        filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var filter = btn.getAttribute('data-filter');
+                filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                catSections.forEach(function (sec) {
+                    if (filter === 'all' || sec.getAttribute('data-category') === filter) {
+                        sec.classList.remove('gal-hidden');
+                    } else {
+                        sec.classList.add('gal-hidden');
+                    }
+                });
+            });
+        });
+
+        /* ─────────────────────────────────────────────
+           LIGHTBOX
+        ───────────────────────────────────────────── */
+        var lightbox  = document.getElementById('galLightbox');
+        var lbImg     = document.getElementById('lbImg');
+        var lbCounter = document.getElementById('lbCounter');
+        var lbCaption = document.getElementById('lbCaption');
+        var lbClose   = document.getElementById('lbClose');
+        var lbPrev    = document.getElementById('lbPrev');
+        var lbNext    = document.getElementById('lbNext');
+        var currentIndex = 0;
+
+        // Collect lightbox-visible images based on current filter
+        function getVisibleImages() {
+            var activeFilter = document.querySelector('.gal-filter-btn.active').getAttribute('data-filter');
+            if (activeFilter === 'all') return ALL_IMAGES;
+            return ALL_IMAGES.filter(function (img) { return img.cat === activeFilter; });
+        }
+
+        function openLightbox(globalIdx) {
+            var visible = getVisibleImages();
+            // Find position within visible
+            currentIndex = visible.findIndex(function (img, i) {
+                return ALL_IMAGES.indexOf(img) === globalIdx;
+            });
+            if (currentIndex === -1) currentIndex = 0;
+            showImage(visible, currentIndex);
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lbClose.focus();
+        }
+
+        function showImage(visible, idx) {
+            var img = visible[idx];
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbCounter.textContent = (idx + 1) + ' / ' + visible.length;
+            lbCaption.textContent = img.label;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+            lbImg.src = '';
+        }
+
+        lbClose.addEventListener('click', closeLightbox);
+        lbPrev.addEventListener('click', function () {
+            var visible = getVisibleImages();
+            currentIndex = (currentIndex - 1 + visible.length) % visible.length;
+            showImage(visible, currentIndex);
+        });
+        lbNext.addEventListener('click', function () {
+            var visible = getVisibleImages();
+            currentIndex = (currentIndex + 1) % visible.length;
+            showImage(visible, currentIndex);
+        });
+
+        // Click outside image closes lightbox
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape')      closeLightbox();
+            if (e.key === 'ArrowLeft')   lbPrev.click();
+            if (e.key === 'ArrowRight')  lbNext.click();
+        });
+
+        // Touch swipe for mobile
+        var touchStartX = 0;
+        lightbox.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+        lightbox.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 50) {
+                if (dx < 0) lbNext.click(); else lbPrev.click();
+            }
+        });
+
+        // Open lightbox when grid item is clicked
+        document.addEventListener('click', function (e) {
+            var item = e.target.closest('.gal-item');
+            if (item) {
+                var idx = parseInt(item.getAttribute('data-index'), 10);
+                openLightbox(idx);
+            }
+        });
+
+        // Keyboard support for grid items
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                var item = document.activeElement && document.activeElement.closest('.gal-item');
+                if (item) {
+                    var idx = parseInt(item.getAttribute('data-index'), 10);
+                    openLightbox(idx);
+                }
+            }
+        });
+
+    }());
+    </script>
+</body>
+</html>

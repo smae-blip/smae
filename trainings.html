@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainings & Manufacturing - SMAE | Society of Mechanical & Automotive Engineers</title>
+    <meta name="description" content="Hands-on manufacturing and design trainings in E-Bike, Solar Car, Formula EV, Carbon Fiber composites, and Baja Buggy by SMAE.">
+    <link rel="icon" href="images/smae_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Trainings Page Styles ── */
+        .tr-hero {
+            background: linear-gradient(135deg, #0a0e17 0%, #1d3557 60%, #e63946 100%);
+            padding: 120px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .tr-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .tr-hero h1 { font-family:'Outfit',sans-serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:900; color:#fff; margin-bottom:14px; }
+        .tr-hero h1 span { color:#e63946; }
+        .tr-hero p { font-size:1.05rem; color:rgba(255,255,255,0.75); max-width:600px; margin:0 auto; line-height:1.7; }
+        .hero-breadcrumb { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:22px; font-size:0.85rem; color:rgba(255,255,255,0.5); }
+        .hero-breadcrumb a { color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s; }
+        .hero-breadcrumb a:hover { color:#e63946; }
+        .hero-breadcrumb i { font-size:0.7rem; }
+
+        /* Main Section */
+        .tr-main { padding: 80px 0; background: #f8f9fa; }
+        .tr-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 60px;
+        }
+        .tr-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 32px 26px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .tr-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+        }
+        .tr-card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: rgba(230,57,70,0.1);
+            color: #e63946;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .tr-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #e63946, #d62828);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 16px rgba(230,57,70,0.3);
+        }
+        .tr-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 10px;
+        }
+        .tr-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .tr-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #e63946;
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+        .tr-card-btn:hover { gap: 10px; }
+
+        /* Curriculum Section */
+        .tr-curriculum {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+        .tr-curriculum h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .tr-curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .tr-curr-item {
+            background: #f8f9fa;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .tr-curr-item h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #e63946;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tr-curr-item p {
+            font-size: 0.84rem;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Callout Box */
+        .tr-cta-box {
+            background: linear-gradient(135deg, #1d3557, #0a0e17);
+            border-radius: 20px;
+            padding: 45px 40px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+        .tr-cta-box h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .tr-cta-box p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 520px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+        .tr-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: #e63946;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 20px rgba(230,57,70,0.4);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .tr-cta-btn:hover {
+            background: #d62828;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width:900px) {
+            .tr-grid { grid-template-columns: repeat(2, 1fr); }
+            .tr-curriculum-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(max-width:550px) {
+            .tr-grid { grid-template-columns: 1fr; }
+            .tr-curriculum-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/smae_logo.webp" alt="SMAE Logo" loading="lazy"><span> SMAE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trainings.html" class="active">Trainings</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="pvnr.html">PVNR Award</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="student-corner.html">Student Corner</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="tr-hero">
+        <div class="container">
+            <h1>Trainings &amp; <span>Manufacturing</span></h1>
+            <p>Hands-on technical workshops and fabrication courses designed to bridge classroom theory with industry-grade vehicle building.</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Trainings</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Section -->
+    <section class="tr-main">
+        <div class="container">
+            
+            <div class="tr-grid fade-up">
+                <!-- Card 1 -->
+                <div class="tr-card">
+                    <span class="tr-card-badge">Popular</span>
+                    <div class="tr-card-icon"><i class="fas fa-motorcycle"></i></div>
+                    <h3>E-Bike Manufacturing</h3>
+                    <p>Learn the end-to-end design, powertrain selection, battery pack assembly, and fabrication of electric two-wheelers.</p>
+                    <a href="student-corner.html" class="tr-card-btn">Enroll / Inquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="tr-card">
+                    <span class="tr-card-badge">Clean Tech</span>
+                    <div class="tr-card-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Solar Car Manufacturing</h3>
+                    <p>Hands-on training in solar photovoltaic integration, lightweight chassis design, and energy-efficient vehicle systems.</p>
+                    <a href="student-corner.html" class="tr-card-btn">Enroll / Inquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="tr-card">
+                    <span class="tr-card-badge">Motorsports</span>
+                    <div class="tr-card-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <h3>Formula Student (EV)</h3>
+                    <p>Experience building a formula-style electric race vehicle—from CAD modelling and aerodynamics to track testing.</p>
+                    <a href="student-corner.html" class="tr-card-btn">Enroll / Inquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="tr-card">
+                    <span class="tr-card-badge">Advanced</span>
+                    <div class="tr-card-icon"><i class="fas fa-cog"></i></div>
+                    <h3>Carbon Fiber Parts</h3>
+                    <p>Master advanced composite materials, vacuum bagging techniques, and carbon fiber body panel fabrication.</p>
+                    <a href="student-corner.html" class="tr-card-btn">Enroll / Inquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="tr-card">
+                    <span class="tr-card-badge">Off-Road</span>
+                    <div class="tr-card-icon"><i class="fas fa-truck-monster"></i></div>
+                    <h3>Baja Buggy Fabrication</h3>
+                    <p>Rugged off-road vehicle frame design, suspension geometry setup, roll-cage safety testing, and assembly.</p>
+                    <a href="student-corner.html" class="tr-card-btn">Enroll / Inquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="tr-card">
+                    <span class="tr-card-badge">Mobility</span>
+                    <div class="tr-card-icon"><i class="fas fa-shuttle-van"></i></div>
+                    <h3>3-Wheeler Vehicle Tech</h3>
+                    <p>Practical exposure to 3-wheeler urban utility vehicle engineering, steering linkage setup, and prototyping.</p>
+                    <a href="student-corner.html" class="tr-card-btn">Enroll / Inquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Curriculum Breakdown -->
+            <div class="tr-curriculum fade-in">
+                <h3>What You Will Gain From Training</h3>
+                <div class="tr-curriculum-grid">
+                    <div class="tr-curr-item">
+                        <h5><i class="fas fa-compass-drafting"></i> 3D CAD Modeling</h5>
+                        <p>Learn chassis modeling and finite element analysis (FEA) for structural safety.</p>
+                    </div>
+                    <div class="tr-curr-item">
+                        <h5><i class="fas fa-wrench"></i> Fabrication Skills</h5>
+                        <p>Direct exposure to TIG/MIG welding, tube bending, and precision machining.</p>
+                    </div>
+                    <div class="tr-curr-item">
+                        <h5><i class="fas fa-car-battery"></i> EV Electronics</h5>
+                        <p>Hands-on experience with Motor Controllers, BMS wiring, and battery safety.</p>
+                    </div>
+                    <div class="tr-curr-item">
+                        <h5><i class="fas fa-vial"></i> Testing &amp; Validation</h5>
+                        <p>Vehicle dynamic testing, brake test setups, and performance telemetry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Callout -->
+            <div class="tr-cta-box fade-up">
+                <h3>Ready to Build Your Own Vehicle?</h3>
+                <p>Register via our Student Corner to join upcoming training batches, winter internships, or campus workshops.</p>
+                <a href="student-corner.html" class="tr-cta-btn">
+                    <i class="fas fa-user-plus"></i> Apply via Student Corner
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><img src="images/smae_logo.png" alt="SMAE Logo" style="height:30px;margin-right:10px;vertical-align:middle;" loading="lazy">SMAE</h3>
+                <p>Equipping students with relevant skills &amp; practical exposure through internships, trainings, and competitions in the automotive domain.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/smaesociety" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SMAE46347992" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mechanical-and-automotive-engineers-86778a149/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Competitions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 71, Second Floor, 30th Cross, 11th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919560122939">+91-9560122939</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@smae.in">info@smae.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMAE - Society of Mechanical and Automotive Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js?v=1.1" defer></script>
+</body>
+</html>

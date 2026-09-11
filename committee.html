@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committee Members - SMAE | Society of Mechanical &amp; Automotive Engineers</title>
+    <meta name="description" content="Meet the SMAE committee leadership, Technical Committee, Advisory Council, and Editorial Board.">
+    <link rel="icon" href="images/smae_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Committee Page Styles ── */
+        .cm-hero {
+            background: linear-gradient(135deg, #0a0e17 0%, #1d3557 60%, #e63946 100%);
+            padding: 120px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cm-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .cm-hero h1 { font-family:'Outfit',sans-serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:900; color:#fff; margin-bottom:14px; }
+        .cm-hero h1 span { color:#e63946; }
+        .cm-hero p { font-size:1.05rem; color:rgba(255,255,255,0.75); max-width:600px; margin:0 auto; line-height:1.7; }
+        .hero-breadcrumb { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:22px; font-size:0.85rem; color:rgba(255,255,255,0.5); }
+        .hero-breadcrumb a { color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s; }
+        .hero-breadcrumb a:hover { color:#e63946; }
+        .hero-breadcrumb i { font-size:0.7rem; }
+
+        /* Filter Pills */
+        .cm-filter-section { padding: 40px 0 20px; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .cm-filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+        .cm-filter-btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 1.5px solid #e1e1e1;
+            background: #f8f9fa;
+            color: #444;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .cm-filter-btn.active, .cm-filter-btn:hover {
+            background: #e63946;
+            color: #fff;
+            border-color: #e63946;
+            box-shadow: 0 4px 16px rgba(230,57,70,0.3);
+        }
+
+        /* Main Section */
+        .cm-main { padding: 70px 0 90px; background: #f8f9fa; }
+        .cm-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cm-section-title i { color: #e63946; }
+
+        .cm-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .cm-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .cm-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+        }
+        .cm-img-wrap {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1d3557, #0a0e17);
+            position: relative;
+            overflow: hidden;
+        }
+        .cm-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.4s ease;
+        }
+        .cm-card:hover .cm-img-wrap img {
+            transform: scale(1.05);
+        }
+        .cm-avatar-fallback {
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; color: rgba(255,255,255,0.25);
+        }
+        .cm-social-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10,14,23,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .cm-card:hover .cm-social-overlay { opacity: 1; }
+        .cm-social-overlay a {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: #e63946;
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .cm-social-overlay a:hover { transform: scale(1.15); }
+
+        .cm-info {
+            padding: 22px 18px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .cm-info h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 6px;
+        }
+        .cm-info p {
+            font-size: 0.84rem;
+            color: #666;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        @media(max-width:1000px) {
+            .cm-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media(max-width:700px) {
+            .cm-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(max-width:480px) {
+            .cm-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/smae_logo.webp" alt="SMAE Logo" loading="lazy"><span> SMAE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trainings.html">Trainings</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="pvnr.html">PVNR Award</a></li>
+                <li><a href="committee.html" class="active">Committee</a></li>
+                <li><a href="student-corner.html">Student Corner</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="cm-hero">
+        <div class="container">
+            <h1>Committee <span>Members</span></h1>
+            <p>Meet the visionary leaders, technical experts, and academic advisors steering SMAE towards engineering excellence.</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Committee</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Pills -->
+    <section class="cm-filter-section">
+        <div class="container">
+            <div class="cm-filter-pills">
+                <button class="cm-filter-btn active" data-csec="all">All Members</button>
+                <button class="cm-filter-btn" data-csec="technical">Technical Committee</button>
+                <button class="cm-filter-btn" data-csec="advisory">Advisory Council</button>
+                <button class="cm-filter-btn" data-csec="editorial">Editorial Board</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Section -->
+    <section class="cm-main">
+        <div class="container">
+
+            <!-- TECHNICAL COMMITTEE -->
+            <div class="cm-group-block" id="csec-technical">
+                <h3 class="cm-section-title"><i class="fas fa-microchip"></i> Technical Committee</h3>
+                <div class="cm-grid">
+                    
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/srijan.jpg" alt="Srijan Rao Polasani" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay">
+                                <a href="https://www.linkedin.com/in/srijan-rao-polasani-82194b104/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Srijan Rao Polasani</h4>
+                            <p>Design Engineer, Collins Aerospace</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/azeem.jpg" alt="Azeem Mohammed Abdul" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Azeem Mohammed Abdul</h4>
+                            <p>Co-Founder &amp; Operations Manager, CarJoz</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/bharadwaj.jpg" alt="Varanasi Venkata Bharadwaj" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay">
+                                <a href="https://www.linkedin.com/in/varanasi-bharadwaj-59558577" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Varanasi Venkata Bharadwaj</h4>
+                            <p>Engineer, Chart Industries Inc</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/ajay.jpg" alt="Ajay Kumar D" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay">
+                                <a href="https://www.linkedin.com/in/ajay-kumar-d-578230118" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Ajay Kumar D</h4>
+                            <p>Senior Engineering Analyst, Oceaneering</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ADVISORY COUNCIL -->
+            <div class="cm-group-block" id="csec-advisory">
+                <h3 class="cm-section-title"><i class="fas fa-user-tie"></i> Advisory Council</h3>
+                <div class="cm-grid">
+                    
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/dr_vijaya_kumar.jpg" alt="Dr. B. Vijaya Kumar" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Dr. B. Vijaya Kumar</h4>
+                            <p>Head of Department (M.E.), Guru Nanak Institute of Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/dr_pal_pandian.jpg" alt="Dr. Pal Pandian" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Dr. Pal Pandian</h4>
+                            <p>Associate Professor, Christ University Faculty of Engineering</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/saurabh_agarwal.png" alt="Saurabh Agarwal" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Saurabh Agarwal</h4>
+                            <p>M.Tech (IIT Delhi), B.Tech (IIT Kanpur), Principal Consultant - HBTU</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/kiran_desai.jpg" alt="Kiran Krishnarao Desai" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Kiran Krishnarao Desai</h4>
+                            <p>Former Chief Engineer, ONGC Limited</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- EDITORIAL BOARD -->
+            <div class="cm-group-block" id="csec-editorial">
+                <h3 class="cm-section-title"><i class="fas fa-book-open"></i> Editorial Board</h3>
+                <div class="cm-grid">
+                    
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/dr_dhanasekaran.jpg" alt="Dr. Dhanasekaran R" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Dr. Dhanasekaran R</h4>
+                            <p>Professor, Guru Nanak Institute of Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="cm-card fade-up">
+                        <div class="cm-img-wrap">
+                            <img src="images/committee/dr_konijeti.jpg" alt="Dr. Konijeti Rama Krishna" onerror="this.style.display='none'">
+                            <div class="cm-social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="cm-info">
+                            <h4>Dr. Konijeti Rama Krishna</h4>
+                            <p>Professor, K.L. University</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><img src="images/smae_logo.png" alt="SMAE Logo" style="height:30px;margin-right:10px;vertical-align:middle;" loading="lazy">SMAE</h3>
+                <p>Equipping students with relevant skills &amp; practical exposure through internships, trainings, and competitions in the automotive domain.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/smaesociety" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SMAE46347992" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mechanical-and-automotive-engineers-86778a149/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Competitions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 71, Second Floor, 30th Cross, 11th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919560122939">+91-9560122939</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@smae.in">info@smae.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMAE - Society of Mechanical and Automotive Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.1" defer></script>
+    <script>
+        // Committee section filter logic
+        document.querySelectorAll('.cm-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.cm-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const target = btn.dataset.csec;
+                document.querySelectorAll('.cm-group-block').forEach(block => {
+                    if (target === 'all' || block.id === 'csec-' + target) {
+                        block.style.display = 'block';
+                    } else {
+                        block.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

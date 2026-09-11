@@ -1,0 +1,856 @@
+﻿{
+    "skdc-event":  [
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-01.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/1.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-02.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/2.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-03.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/3.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-04.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/4.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-05.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/5.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-06.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/6.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-07.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/7.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-08.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/8.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-09.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/9.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-10.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/10.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-11.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/11.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-12.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/12.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-13.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/13.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-14.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/14.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-15.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/15.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-16.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/16.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-17.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/17.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-18.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/18.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-19.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/19.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-20.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/20.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-21.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/21.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-22.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/22.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-23.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/23.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-24.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/24.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-25.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/25.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-26.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/26.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-27.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/27.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-28.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/28.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-29.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/29.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-30.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/30.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-31.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/31.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-32.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/32.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-33.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/33.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-34.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/34.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-35.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/35.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-36.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/36.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-37.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/37.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-38.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/38.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-39.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/39.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-40.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/40.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-41.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/41.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-42.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/42.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-43.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/43.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-44.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/44.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-45.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/45.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-46.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/46.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-47.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/47.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-48.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/48.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-49.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/49.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-50.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/50.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-51.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/51.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-52.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/52.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-53.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/53.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-54.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/54.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-55.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/55.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-56.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/56.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       },
+                       {
+                           "local":  "images/gallery/skdc-event/skdc-event-57.jpg",
+                           "original":  "https://smae.in/gallery/SKDC-EVENT/SKDC-SEASON-1-EVENT-PHOTOS/57.jpg",
+                           "status":  "downloaded",
+                           "subcategory":  "SKDC Season-1 Event"
+                       }
+                   ],
+    "technical-workshops":  [
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-01.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/1.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-02.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/2.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-03.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/3.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-04.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/4.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-05.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/5.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-06.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/6.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-07.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/7.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-08.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/8.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-09.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/9.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-10.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/10.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-11.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/11.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-12.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/12.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-13.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/13.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-14.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/14.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-15.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/15.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-16.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/16.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-17.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/17.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-18.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/18.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-19.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/19.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-20.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/20.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-21.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/21.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-22.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/22.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-23.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/23.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-24.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/24.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-25.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/25.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-26.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/26.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-27.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/27.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-28.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/28.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-29.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/29.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-30.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/30.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-31.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/31.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-1/skdc1-32.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC-SEASON-I-OFFICIAL-WORKSHOP/32.JPG",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-I Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-01.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/1.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-02.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/2.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-03.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/3.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-04.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/4.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-05.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/5.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-06.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/6.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-07.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/7.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-08.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/8.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-09.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/9.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-10.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/10.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-11.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/11.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-12.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/12.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-13.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/13.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-14.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/14.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-15.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/15.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-16.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/16.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-17.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/17.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-18.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/18.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-19.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/19.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-20.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/20.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-21.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/21.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-22.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/22.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-23.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/23.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-24.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/24.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-25.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/25.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                },
+                                {
+                                    "local":  "images/gallery/technical-workshops/skdc-season-2/skdc2-26.jpg",
+                                    "original":  "https://smae.in/gallery/TECHNICAL-WORKSHOPS/SKDC Season-II official Workshop/26.jpg",
+                                    "status":  "downloaded",
+                                    "subcategory":  "SKDC Season-II Official Workshop"
+                                }
+                            ],
+    "training-internships":  [
+                                 {
+                                     "local":  "images/gallery/training-internships/training-01.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/1.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-02.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/2.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-03.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/3.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-04.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/4.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-05.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/5.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-06.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/6.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-07.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/7.JPG",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 },
+                                 {
+                                     "local":  "images/gallery/training-internships/training-avn.jpg",
+                                     "original":  "https://smae.in/gallery/TRAINING-SESSIONS-INTERNSHIPS/summer-internship/AVN.jpg",
+                                     "status":  "downloaded",
+                                     "subcategory":  "Summer Internship"
+                                 }
+                             ],
+    "awareness-programs":  [
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-01.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/1.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-02.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/2.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-03.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/3.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-04.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/4.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-05.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/5.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-06.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/6.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-07.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/7.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-08.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/8.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-09.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/9.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-10.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/10.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-11.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/11.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-12.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/12.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-13.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/13.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-14.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/14.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-15.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/15.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-16.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/16.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-17.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/17.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               },
+                               {
+                                   "local":  "images/gallery/awareness-programs/awareness-18.jpg",
+                                   "original":  "https://smae.in/gallery/AWARENESS-PROGRAMS/7-day-summer-upskill-program/18.JPG",
+                                   "status":  "downloaded",
+                                   "subcategory":  "7-Day Summer Upskill Program"
+                               }
+                           ]
+}

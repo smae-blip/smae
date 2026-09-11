@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SMAE | Society of Mechanical & Automotive Engineers</title>
+    <meta name="description" content="Learn about SMAE - Society of Mechanical and Automotive Engineers. Our mission, vision, statistics, and impact in engineering education.">
+    <link rel="icon" href="images/smae_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── About Page Styles ── */
+        .ab-hero {
+            background: linear-gradient(135deg, #0a0e17 0%, #1d3557 60%, #e63946 100%);
+            padding: 120px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ab-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .ab-hero h1 { font-family:'Outfit',sans-serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:900; color:#fff; margin-bottom:14px; }
+        .ab-hero h1 span { color:#e63946; }
+        .ab-hero p { font-size:1.05rem; color:rgba(255,255,255,0.75); max-width:620px; margin:0 auto; line-height:1.7; }
+        .hero-breadcrumb { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:22px; font-size:0.85rem; color:rgba(255,255,255,0.5); }
+        .hero-breadcrumb a { color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s; }
+        .hero-breadcrumb a:hover { color:#e63946; }
+        .hero-breadcrumb i { font-size:0.7rem; }
+
+        /* Stats Strip */
+        .ab-stats { background:#fff; padding:35px 0; border-bottom:1px solid #f0f0f0; }
+        .ab-stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+        .ab-stat-item { text-align:center; padding:16px; border-right:1px solid #f0f0f0; }
+        .ab-stat-item:last-child { border-right:none; }
+        .ab-stat-item strong { display:block; font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:900; color:#e63946; line-height:1; }
+        .ab-stat-item span { font-size:0.85rem; color:#666; margin-top:6px; display:block; font-weight:500; }
+
+        /* About Main Content */
+        .ab-main { padding:80px 0; background:#f8f9fa; }
+        .ab-story-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start; margin-bottom:60px; }
+        .ab-text-box { background:#fff; border-radius:20px; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.05); }
+        .ab-text-box h2 { font-family:'Outfit',sans-serif; font-size:1.8rem; font-weight:800; color:#111; margin-bottom:18px; }
+        .ab-text-box p { font-size:0.95rem; color:#555; line-height:1.75; margin-bottom:14px; }
+        .ab-text-box p:last-child { margin-bottom:0; }
+        .ab-quote { background:linear-gradient(135deg,#1d3557,#0a0e17); border-radius:18px; padding:30px; color:#fff; position:relative; }
+        .ab-quote i.quote-icon { font-size:2rem; color:#e63946; margin-bottom:12px; display:block; }
+        .ab-quote p { font-size:0.95rem; color:rgba(255,255,255,0.85); line-height:1.7; font-style:italic; }
+
+        /* Mission & Vision */
+        .ab-mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:60px; }
+        .ab-mv-card { background:#fff; border-radius:20px; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.05); position:relative; overflow:hidden; }
+        .ab-mv-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg,#e63946,#d62828); }
+        .ab-mv-card h3 { font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:800; color:#111; margin-bottom:16px; display:flex; align-items:center; gap:12px; }
+        .ab-mv-card h3 i { width:42px; height:42px; border-radius:12px; background:rgba(230,57,70,0.1); color:#e63946; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+        .ab-mv-card ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+        .ab-mv-card ul li { display:flex; align-items:flex-start; gap:10px; font-size:0.92rem; color:#555; line-height:1.5; }
+        .ab-mv-card ul li::before { content:'\f058'; font-family:'Font Awesome 6 Free'; font-weight:900; color:#e63946; margin-top:2px; flex-shrink:0; }
+
+        /* Core Values */
+        .ab-values-header { text-align:center; margin-bottom:36px; }
+        .ab-values-header h3 { font-family:'Outfit',sans-serif; font-size:1.7rem; font-weight:800; color:#111; }
+        .ab-values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+        .ab-value-box { background:#fff; border-radius:16px; padding:24px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.05); transition:transform 0.25s,box-shadow 0.25s; }
+        .ab-value-box:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+        .ab-value-box i { width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg,#e63946,#d62828); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin:0 auto 14px; box-shadow:0 6px 16px rgba(230,57,70,0.3); }
+        .ab-value-box h4 { font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111; margin-bottom:6px; }
+        .ab-value-box p { font-size:0.85rem; color:#666; line-height:1.5; }
+
+        @media(max-width:900px) {
+            .ab-stats-grid { grid-template-columns:repeat(2,1fr); }
+            .ab-story-grid { grid-template-columns:1fr; }
+            .ab-mv-grid { grid-template-columns:1fr; }
+            .ab-values-grid { grid-template-columns:repeat(2,1fr); }
+        }
+        @media(max-width:480px) {
+            .ab-values-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/smae_logo.webp" alt="SMAE Logo" loading="lazy"><span> SMAE</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="trainings.html">Trainings</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="pvnr.html">PVNR Award</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="student-corner.html">Student Corner</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="ab-hero">
+        <div class="container">
+            <h1>About <span>SMAE</span></h1>
+            <p>Empowering young engineers, connecting theoretical education with real-world automotive innovation and practical exposure.</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="ab-stats">
+        <div class="container">
+            <div class="ab-stats-grid">
+                <div class="ab-stat-item">
+                    <strong>9+</strong>
+                    <span>Years of Excellence</span>
+                </div>
+                <div class="ab-stat-item">
+                    <strong>10k+</strong>
+                    <span>Students Trained</span>
+                </div>
+                <div class="ab-stat-item">
+                    <strong>50+</strong>
+                    <span>Competitions Hosted</span>
+                </div>
+                <div class="ab-stat-item">
+                    <strong>100+</strong>
+                    <span>University Partners</span>
+                </div>
+            </div>
+        </div>
+    </div>
+=
+    <!-- Main Content Section -->
+    <section class="ab-main">
+        <div class="container">
+            
+            <!-- Story & Philosophy -->
+            <div class="ab-story-grid">
+                <div class="ab-text-box fade-in">
+                    <h2>Brief About Us</h2>
+                    <p>The <strong>Society of Mechanical and Automotive Engineers (SMAE)</strong> challenges undergraduate and diploma engineers to research and develop innovative projects. We inspire students to imagine, as imagination is the foundation of breakthroughs in engineering.</p>
+                    <p>Activities organized by SMAE give students the chance to form teams, work toward a common goal with team spirit, and showcase their creativity and technical skills against peer teams from colleges across the nation.</p>
+                    <p>We bridge the gap between classroom theory and real engineering. Students learn to research, design, fabricate, and manage complex projects—gaining confidence to enter the automotive and mechanical engineering industries.</p>
+                </div>
+
+                <div class="ab-quote fade-in">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>“Commitment unlocks the doors of imagination, provides vision, and gives us the right tools to turn engineering dreams into real-world innovations.”</p>
+                    <div style="margin-top:20px; font-weight:700; color:#e63946; font-size:0.9rem; font-style:normal;">— SMAE Leadership Council</div>
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="ab-mv-grid">
+                <div class="ab-mv-card fade-up">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <ul>
+                        <li>Imbibe advanced technical skills among mobility practitioners and student engineers.</li>
+                        <li>Promote scientific and technical development for the benefit of industry and mankind.</li>
+                        <li>Create a vibrant forum for members to exchange innovative research and engineering ideas.</li>
+                        <li>Provide guidance and networking from national and international industry delegates.</li>
+                    </ul>
+                </div>
+
+                <div class="ab-mv-card fade-up">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <ul>
+                        <li>We strive to enrich technical skills and multi-disciplinary exposure of students by providing competitive platforms in mechanical, EV, and automotive domains.</li>
+                        <li>To build a nation-wide network of skilled engineering leaders ready for future mobility challenges.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="ab-values-header fade-in">
+                <h3>Core Pillars of SMAE</h3>
+            </div>
+            <div class="ab-values-grid fade-up">
+                <div class="ab-value-box">
+                    <i class="fas fa-microchip"></i>
+                    <h4>Innovation</h4>
+                    <p>Fostering creative design thinking and EV technology exploration.</p>
+                </div>
+                <div class="ab-value-box">
+                    <i class="fas fa-hands-holding-circle"></i>
+                    <h4>Practical Skill</h4>
+                    <p>Bridging textbook concepts with real fabrication &amp; workshop practice.</p>
+                </div>
+                <div class="ab-value-box">
+                    <i class="fas fa-users-gear"></i>
+                    <h4>Team Synergy</h4>
+                    <p>Building leadership, project management, and collaborative spirit.</p>
+                </div>
+                <div class="ab-value-box">
+                    <i class="fas fa-award"></i>
+                    <h4>Excellence</h4>
+                    <p>Setting national standards in student motorsports and research.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><img src="images/smae_logo.png" alt="SMAE Logo" style="height:30px;margin-right:10px;vertical-align:middle;" loading="lazy">SMAE</h3>
+                <p>Equipping students with relevant skills &amp; practical exposure through internships, trainings, and competitions in the automotive domain.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/smaesociety" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SMAE46347992" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_s_m_a_e_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mechanical-and-automotive-engineers-86778a149/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Competitions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 71, Second Floor, 30th Cross, 11th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919560122939">+91-9560122939</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@smae.in">info@smae.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SMAE - Society of Mechanical and Automotive Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js?v=1.1" defer></script>
+</body>
+</html>
